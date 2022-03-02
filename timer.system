@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<system>
+
+    <!--
+      Xilinx Zynq UltraScale+ user guide p176:
+      RTC registers are mapped in a 4 KB space starting at 0xFFA6_0000.
+    -->
+    <memory_region name="rtclock" size="0x1_000" phys_addr="0xFFA6_0000" />
+
+    <protection_domain name="timer" priority="254">
+        <program_image path="timer.elf" />
+    </protection_domain>
+
+    <protection_domain name="printer" priority="10">
+        <program_image path="printer.elf" />
+    </protection_domain>
+
+</system>
